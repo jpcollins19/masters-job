@@ -52,7 +52,7 @@ const NavBar = () => {
         {part.id && (
           <div>
             <h5 className="last-updated">
-              Last Updated: 10/20/21 at 10:36 pm CT
+              Last Updated: 3/3/22 at 10:36 pm CT
             </h5>
             <h5 className="num-picks">
               # of submitted picks: {SubmittedPicks.length}

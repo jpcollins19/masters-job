@@ -2,16 +2,6 @@ const Rules_Page = () => {
   return (
     <main id="rules_page">
       <div>
-        <h4>
-          Setting this up with an API (automatic score updates) would have cost
-          money, and I didn't want to take that out of the purse. So, at least
-          for this year, I'll still be updating scores manually, but I'll be
-          doing it more regularly throughout the tourney.
-          <div>&nbsp;</div>
-          Last Updated info will be in the top left of the site upon signing in.
-          <div>&nbsp;</div>
-          -------
-        </h4>
         <h3>Pool Scoring</h3>
         <ul>
           <li>Choose two golfers at or under 25/1 odds</li>
@@ -79,7 +69,6 @@ const Rules_Page = () => {
         <h3>Payments/Payout:</h3>
         <ul>
           <li>$20 entry fee.</li>
-          <li>Venmo: Joe-Collins-12</li>
           <li>3rd place gets money back.</li>
           <li>Winner gets 75% of remaining purse.</li>
           <li>2nd place gets 25% of remaining purse.</li>
