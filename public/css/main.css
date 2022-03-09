@@ -1,0 +1,999 @@
+/*////////////NavBar////////////*/
+.masters-logo {
+  width: 14rem;
+}
+
+.masters-logo-no-part {
+  width: 14rem;
+  margin: 2.2rem 0rem 2.3rem 0rem;
+}
+
+.last-updated {
+  padding: 0rem 0.3rem 0rem 0.3rem;
+  margin: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.num-picks {
+  text-align: center;
+  margin: 0.6rem 0rem 1.6rem 0rem;
+}
+
+.white-text {
+  margin: 0;
+  text-align: center;
+  text-shadow: 2px 2px black;
+  color: white;
+}
+
+.navbar-title-text {
+  margin: 0;
+  border-bottom: 1px solid white;
+}
+
+.navbar-option-text {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+/*/ ///////////Header////////////*/
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-text {
+  margin: 0;
+  color: white;
+  padding: 1rem 2rem 0rem 0rem;
+}
+
+.logout-text {
+  margin: 0;
+  color: white;
+  padding: 1rem 2rem 0rem 0rem;
+}
+
+.cut-symbol-text {
+  margin: 0rem 1rem 0rem 0rem;
+  font-size: 0.8rem;
+  padding-left: 5rem;
+}
+
+.cut-symbol-text1 {
+  margin: 0rem 1rem 0rem 0rem;
+  font-size: 0.8rem;
+  padding-left: 5rem;
+}
+
+.cut-symbol-text2 {
+  margin: 0.5rem 1rem 0rem 0rem;
+  font-size: 0.8rem;
+  padding-left: 5rem;
+}
+
+.cut-number-text {
+  margin: 0rem 0rem 0.5rem 0rem;
+  font-size: 0.8rem;
+}
+
+.page-title-text {
+  text-align: center;
+  padding: 0rem 0rem 0rem 15rem;
+  color: white;
+  font-size: 2.1rem;
+  margin: 0;
+}
+
+.page-title-text-hide {
+  color: #2e7d32;
+  text-shadow: none;
+}
+
+.cut-info-text {
+  margin: 0rem;
+  font-size: 0.8rem;
+  padding-bottom: 0.3rem;
+}
+
+/*/ ///////////Pre_Login_Page_Page////////////*/
+
+#main-page {
+  background-position: center;
+  background-image: url("/public/pics/par-3.jpg");
+  background-size: cover;
+  width: 100%;
+  overflow: auto;
+  /* max-height: max-content; */
+  /* height: fit-content; */
+  max-height: 740px;
+  min-height: 740px;
+}
+
+/*/ ///////////Login_Page////////////*/
+#login-page {
+  margin-top: 2%;
+  max-height: 540px;
+}
+
+.main-cont-login {
+  border-radius: 1rem;
+  padding: 1rem;
+  background: yellow;
+  height: 34rem;
+  width: 30rem;
+}
+
+.main-cont-create-account {
+  border-radius: 1rem;
+  padding: 1rem;
+  background: yellow;
+  height: 39rem;
+  width: 30rem;
+}
+
+.main-cont1-login {
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 32rem;
+  background: linear-gradient(
+    to bottom,
+    #082e09 0%,
+    #2e7d32 40%,
+    #2ca134 50%,
+    #2e7d32 60%,
+    #082e09 100%
+  );
+}
+
+.main-cont1-create-account {
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 37rem;
+  background: linear-gradient(
+    to bottom,
+    #082e09 0%,
+    #2e7d32 40%,
+    #2ca134 50%,
+    #2e7d32 60%,
+    #082e09 100%
+  );
+}
+
+#main-text-container-login > h1 {
+  margin: 0;
+  padding: 1rem 0rem 0rem 0rem;
+}
+
+.error-cont-login {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0rem 0rem 0rem;
+  text-shadow: 0px 0px black;
+}
+
+.login-cont {
+  display: flex;
+  flex-direction: column;
+  height: 6rem;
+  justify-content: space-around;
+}
+
+.create-account-cont {
+  display: flex;
+  flex-direction: column;
+  height: 10rem;
+  justify-content: space-around;
+}
+
+.login-cont > div {
+  padding-bottom: 1rem;
+}
+
+#email-info {
+  height: 2rem;
+  width: 15rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#pw-info {
+  height: 2rem;
+  width: 15rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#submit-cont {
+  padding: 1rem;
+}
+
+#submit-info {
+  height: 2rem;
+  width: 5rem;
+}
+
+.pw-cont {
+  display: flex;
+  flex-direction: column;
+}
+
+.view-pw {
+  font-size: 1rem;
+  text-shadow: none;
+  cursor: pointer;
+}
+
+#forgot-pw-cont {
+  padding: 0rem 1rem 0.5rem 1rem;
+}
+
+.forgot-pw-info > div {
+  display: flex;
+  align-items: center;
+  padding: 3rem 3rem 0rem 3rem;
+  flex-direction: column;
+  text-align: center;
+}
+
+.forgot-pw-info > ul {
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  flex-direction: column;
+}
+
+#create-account-cont {
+  padding: 0rem 1rem 0.5rem 1rem;
+}
+
+/*/ ///////////My_Picks////////////*/
+
+#my-picks-page {
+  margin-top: 1%;
+  max-height: 540px;
+}
+
+.main-cont {
+  border-radius: 1rem;
+  padding: 1rem;
+  background: yellow;
+  /* margin-left: 23rem; */
+  /* margin: 3% 5rem 0rem 23rem; */
+  /* margin-left: 23rem;
+  margin-top: 4rem;
+  margin-right: 5rem; */
+}
+
+.pick-cont {
+  background: linear-gradient(
+    to bottom,
+    #082e09 0%,
+    #2e7d32 40%,
+    #2ca134 50%,
+    #2e7d32 60%,
+    #082e09 100%
+  );
+  height: 32rem;
+  width: 40rem;
+}
+
+.part-name-cont {
+  text-align: center;
+  font-size: 1.8rem;
+  color: yellow;
+  display: flex;
+  justify-content: center;
+}
+
+.part-name-cont-edit {
+  text-align: center;
+  font-size: 1.8rem;
+  color: red;
+  display: flex;
+  justify-content: center;
+}
+
+.part-name-cont-edit-tiebreaker {
+  text-align: center;
+  font-size: 1.8rem;
+  color: red;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.part-name {
+  border: dashed 2px yellow;
+  border-radius: 1.5rem;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  margin-top: 0.1px;
+}
+
+.part-name-edit {
+  border: dashed 2px red;
+  border-radius: 1.5rem;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  margin-top: 0.1px;
+}
+
+.error-cont {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0rem 0.5rem 0rem;
+  text-shadow: 0px 0px black;
+}
+
+.error-text {
+  display: flex;
+  justify-content: center;
+  text-shadow: 0px 0px black;
+}
+
+.non-error {
+  padding: 0.5rem 0 0.5rem 0;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.part-picks-cont {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tier-header-cont {
+  display: flex;
+  padding-left: 3rem;
+}
+
+.tier-header > h3 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  padding-left: 5rem;
+}
+
+.tier-cont {
+  display: flex;
+  justify-content: center;
+  height: 4rem;
+  padding-bottom: 1.5rem;
+}
+
+.golfer-tier-verbiage-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.golfer-tier-verbiage-cont > div {
+  font-size: 1.2rem;
+}
+
+.golfer-num {
+  padding-right: 0.5rem;
+}
+
+.golfer-option-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.golfer-choice-cont {
+  border: solid 2px yellow;
+  padding: 0.1rem;
+  margin-top: 0.2rem;
+  width: 11rem;
+}
+
+.golfer-choice-cont-edit {
+  padding: 0.1rem;
+  margin-top: 0.2rem;
+  width: 11rem;
+}
+
+.golfer-choice-cont-edit-tiebreaker-score {
+  padding: 0.1rem;
+  margin-top: 0.2rem;
+  width: 11rem;
+  border: solid 2px red;
+}
+
+.drop-down-options {
+  height: 2rem;
+  width: 14rem;
+  font-size: 1rem;
+  border: solid 2px red;
+  background-color: transparent;
+}
+
+.edit-golfer-button-cont-no-picks {
+  padding: 0.5rem;
+  margin: 1rem 0rem 0rem 0rem;
+  font-weight: bold;
+}
+
+.edit-golfer-button-cont {
+  padding: 0.5rem;
+  margin: 1rem 0rem 0rem 5rem;
+  font-weight: bold;
+}
+
+.edit-tiebreaker-cont {
+  padding: 0.5rem;
+  margin: 1rem 0rem 0rem 0rem;
+  font-weight: bold;
+}
+
+#tiebreaker-info-cont {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: column;
+}
+
+.tiebreaker-header > h3 {
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.tiebreaker-tier-cont {
+  display: flex;
+  justify-content: center;
+  height: 4rem;
+  padding-bottom: 1.5rem;
+  flex: 2;
+}
+
+.tiebreaker-option-cont {
+  display: flex;
+  flex-direction: column;
+}
+
+.tiebreaker-score-verbiage-cont {
+  padding-top: 0.6rem;
+}
+
+.tiebreaker-choice-cont {
+  border: solid 2px yellow;
+  padding: 0.2rem;
+  width: 11rem;
+  margin-bottom: 0.5rem;
+}
+
+/*/ ///////////My_Picks_edit_golfers////////////*/
+
+.main-cont-edit-golfers {
+  border-radius: 1rem;
+  padding: 1rem;
+  background: red;
+  /* margin-left: 27rem; */
+}
+
+.pick-cont-edit-golfers {
+  /* background-color: #28752c; */
+  background: linear-gradient(
+    to bottom,
+    #082e09 0%,
+    #2e7d32 40%,
+    #2ca134 50%,
+    #2e7d32 60%,
+    #082e09 100%
+  );
+  height: 32rem;
+  width: 33rem;
+}
+
+.submit-button-and-cancel-cont {
+  margin-left: 6rem;
+}
+
+.submit-golfers-button-cont {
+  padding: 0.5rem;
+  font-weight: bold;
+  width: 7rem;
+}
+
+.cancel-button-cont {
+  padding: 1rem 0rem 1rem 0rem;
+}
+
+.cancel-button-cont-tiebreaker {
+  padding: 1rem 0rem 1rem 0rem;
+}
+
+/*/ ///////////My_Picks_edit_tiebreaker////////////*/
+
+.pick-cont-edit-tiebreaker {
+  background: linear-gradient(
+    to bottom,
+    #082e09 0%,
+    #2e7d32 40%,
+    #2ca134 50%,
+    #2e7d32 60%,
+    #082e09 100%
+  );
+  height: 28rem;
+  width: 30rem;
+}
+
+.tiebreaker-header-edit > h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+/*/ ///////////golfer-odds////////////*/
+
+#odds-page {
+  overflow: auto;
+  max-height: 670px;
+  background-image: url("/public/pics/augusta-entrance.jpg");
+  background-size: cover;
+  background-position: center;
+  width: calc(100% - 1rem);
+  height: 670px;
+}
+
+#golfer-odds-container {
+  padding: 2rem;
+}
+
+#golfer-odds-container > h1 {
+  font-size: 3em;
+}
+
+.white-text {
+  margin: 0;
+  text-align: center;
+  text-shadow: 1.5px 1.5px black;
+  color: white;
+}
+
+#golfer-odds-tier-headers {
+  display: flex;
+  justify-content: space-around;
+}
+
+.golfer-odds-all-tiers-table-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.golfer-odds-single-tier-container {
+  display: flex;
+  border: solid 5px yellow;
+  background: linear-gradient(
+    to bottom,
+    #082e09 0%,
+    #2e7d32 40%,
+    #2ca134 50%,
+    #2e7d32 60%,
+    #082e09 100%
+  );
+  max-height: 500px;
+  height: fit-content;
+  flex-direction: column;
+  max-width: 260px;
+  margin: 0;
+  color: white;
+  overflow: auto;
+}
+
+.golfer-odds-single-tier-text-splitter-container {
+  display: flex;
+  align-items: center;
+}
+
+.golfer-odds-single-tier-text-splitter-container > div > ul > h4 {
+  margin: 0;
+  text-align: left;
+}
+
+.golfer-odds-single-tier-text-splitter-container > div > ul {
+  text-align: left;
+}
+
+.list-style-none {
+  list-style: none;
+}
+
+.golfer-name-text-alignment {
+  margin: 0;
+  padding: 0;
+  padding-left: 1rem;
+}
+
+.golfer-odds-text-alignment {
+  margin: 0;
+  padding: 1rem;
+}
+
+/*/ ///////////rules_page////////////*/
+
+#rules_page {
+  padding-left: 5rem;
+  background-color: rgb(224, 218, 218);
+  max-height: 670px;
+  overflow: auto;
+}
+
+main > div > ul {
+  padding-right: 9rem;
+}
+
+main > div > h3 {
+  padding-top: 1rem;
+}
+
+#rules-container > div > ul {
+  padding-right: 7rem;
+}
+
+h3 {
+  margin: 0;
+}
+
+main > div .to-do {
+  color: red;
+}
+
+/*/ ///////////scorecard-page////////////*/
+
+#scorecard_page {
+  background-position: center;
+  background-image: url("/public/pics/par-3.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  overflow: auto;
+  max-height: 670px;
+  /* height: 82vh; */
+  /* height: fit-content; */
+}
+
+#scorecard-master-container {
+  border: solid 2px black;
+  border-style: hidden;
+}
+
+#scorecard-master-container > h1 {
+  border: solid 2px black;
+  border-style: hidden;
+  padding-top: 2rem;
+  font-size: 3em;
+}
+
+#scorecard-part-scores-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+#scorecard-part-scores-table-container {
+  display: flex;
+}
+
+#rank-column {
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#rank-column > h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#rank-column > div {
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#rank-column > div > input {
+  margin-top: 0.5rem;
+}
+
+.small-box {
+  width: 50%;
+}
+
+.center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+#part-name-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+#part-name-column > h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#part-name-column > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#part-name-column > div > input {
+  width: 13rem;
+  margin-top: 0.5rem;
+}
+
+.name-box {
+  width: 80%;
+}
+
+.tie-tie {
+  background-color: yellow;
+}
+
+#score-column {
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+  align-items: flex-start;
+}
+
+#score-column > h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#score-column > div {
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+}
+
+#score-column > div > input {
+  margin-top: 0.5rem;
+}
+
+/*/ ///////////pool-picks_page////////////*/
+
+#pool-picks-page {
+  background-image: url("/public/pics/tiger.jpg");
+  /* background-image: url("https://public.augusta.com/s3fs-public/article/images/MAS0414TIGERWINS485.jpg"); */
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  overflow: auto;
+  max-height: 670px;
+  min-height: 670px;
+  height: fit-content;
+}
+
+.cut-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+#pool-picks-container {
+  padding-top: 2rem;
+}
+
+#pool-picks-container > h1 {
+  margin-bottom: 1rem;
+  font-size: 3em;
+}
+
+.pool-picks-all-picks-table-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 1.5rem;
+}
+/* 
+.pool-picks-single-container {
+  display: flex;
+  height: 200px;
+  flex-direction: column;
+  width: 320px;
+  justify-content: center; 
+ padding: 2.5rem;  
+ padding-bottom: 1rem;
+}  */
+
+.pool-picks-single-container > div > h2 {
+  margin-bottom: 0.3rem;
+}
+
+/* .pool-picks-single-container > div {
+  padding-left: 2.5rem;
+}  */
+
+.part-name {
+  margin: 0.5rem;
+}
+
+.not-paid {
+  background-color: red;
+}
+
+.pool-picks-golfer-info-text-container {
+  display: flex;
+  border: solid 2px black;
+  background-color: rgb(216, 209, 209);
+  height: 180px;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0.8rem 0rem 0rem 0rem;
+  width: 22rem;
+  font-size: 0.9rem;
+  margin: 0rem 0.5rem 0rem 0.5rem;
+}
+
+.pool-picks-golfer-info-text-container h4 {
+  margin: 0;
+}
+
+.tiebreaker-info {
+  margin: 0.2rem;
+}
+
+.pool-picks-golfer-cut-container {
+  flex: 0;
+  text-align: center;
+}
+
+.hide-text {
+  color: rgb(216, 209, 209);
+}
+
+.hide-text-white {
+  color: white;
+}
+
+.pool-picks-golfer-cut-container > h4 {
+  color: rgb(216, 209, 209);
+}
+
+.pool-picks-golfer-cut-container > div {
+  text-align: center;
+}
+
+.pool-picks-golfer-name-container {
+  flex: 0.6;
+}
+
+.pool-picks-golfer-tier-container {
+  flex: 0.1;
+  text-align: center;
+}
+
+.pool-picks-golfer-score-container {
+  flex: 0.1;
+  text-align: center;
+}
+
+.neg-score {
+  color: red;
+}
+
+.pool-picks-golfer-total-container {
+  flex: 0;
+  text-align: center;
+}
+
+/*/ ///////////name////////////*/
+
+.name-cont {
+  background: linear-gradient(
+    to bottom,
+    #082e09 0%,
+    #2e7d32 40%,
+    #2ca134 50%,
+    #2e7d32 60%,
+    #082e09 100%
+  );
+  height: 10rem;
+  width: 30rem;
+}
+
+.main-cont-edit-name {
+  border-radius: 1rem;
+  padding: 1rem;
+  background: red;
+  /* margin-left: 27rem; */
+}
+
+.pick-cont-edit-name {
+  background: linear-gradient(
+    to bottom,
+    #082e09 0%,
+    #2e7d32 40%,
+    #2ca134 50%,
+    #2e7d32 60%,
+    #082e09 100%
+  );
+  height: 15rem;
+  width: 30rem;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.cancel-button-cont-name {
+  padding: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.error-cont-name {
+  padding: 1rem;
+}
+
+.part-name-edit-name {
+  border: dashed 2px red;
+  border-radius: 1.5rem;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  margin-top: 0.1px;
+  background-color: transparent;
+  color: red;
+  text-shadow: 2px 2px black;
+  font-size: 1.8rem;
+  width: 100%;
+  text-align: center;
+}
+
+/*/ ///////////ADMIN_PAGE////////////*/
+
+.part-picks-cont-admin {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tier-cont-admin {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 1.5rem;
+  height: 28rem;
+}
+
+.golfer-num-admin {
+  padding-right: 0.5rem;
+  text-align: end;
+}
+
+.checkbox-cont {
+  margin: 0.5rem;
+}
+
+.drop-down-options-admin {
+  height: 2rem;
+  width: 14rem;
+  font-size: 1rem;
+  border: solid 2px yellow;
+  background-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.admin-input {
+  background-color: transparent;
+  border: transparent;
+  font-size: 1rem;
+}
