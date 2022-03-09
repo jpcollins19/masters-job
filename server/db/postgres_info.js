@@ -395,909 +395,455 @@ const golferInfo = [
 ];
 
 const syncAndSeed = async () => {
-  await db.sync({ force: true });
+  // await db.sync({ force: true });
   /////////////////////////////////////////////////////////////
-  const [
-    Collin_Morikawa,
-    Dustin_Johnson,
-    Sergio_Garcia,
-    Francesco_Molinari,
-    Jon_Rahm,
-    Brooks_Koepka,
-    Sam_Burns,
-    Abraham_Ancer,
-    Webb_Simpson,
-    Scottie_Scheffler,
-    Louis_Oosthuizen,
-    Jordan_Spieth,
-    Xander_Schauffele,
-    Hideki_Matsuyama,
-    Will_Zalatoris,
-    Harris_English,
-    Patrick_Reed,
-    Paul_Casey,
-    Corey_Conners,
-    Si_Woo_Kim,
-    Adam_Scott,
-    Cameron_Tringale,
-    Matthew_Wolff,
-    Jason_Kokrak,
-    Joaquin_Niemann,
-    Erik_Van_Rooyen,
-    Maverick_McNealy,
-    Mito_Pereira,
-    Russell_Henley,
-    Talor_Gooch,
-    Marc_Leishman,
-    Justin_Thomas,
-    Kevin_Na,
-    Lee_Westwood,
-    Rory_McIlroy,
-    Sungjae_Im,
-    Viktor_Hovland,
-    Ryan_Palmer,
-    Adam_Hadwin,
-    Taylor_Moore,
-    Ian_Poulter,
-    Cameron_Davis,
-    Emiliano_Grillo,
-    Aaron_Wise,
-    Rickie_Fowler,
-    Patton_Kizzire,
-    Carlos_Ortiz,
-    Pat_Perez,
-    Doug_Ghim,
-    Luke_List,
-    Stewart_Cink,
-    Sebastian_Munoz,
-    Seamus_Power,
-    Kyoung_Hoon_Lee,
-    Chad_Ramey,
-    Kevin_Kisner,
-    Lanto_Griffin,
-    Denny_McCarthy,
-    Danny_Willett,
-    Joel_Dahmen,
-    Sahith_Theegala,
-    Henrik_Norlander,
-    Lucas_Glover,
-    Charl_Schwartzel,
-    Garrick_Higgo,
-    Roger_Sloan,
-    Russell_Knox,
-    Joseph_Bramlett,
-    Cameron_Young,
-    Rasmus_Hojgaard,
-    Ryan_Moore,
-    Stephan_Jaeger,
-    Scott_Stallings,
-    Tom_Hoge,
-    Hayden_Buckley,
-    Brendan_Steele,
-    Martin_Laird,
-    Harry_Higgs,
-    Brandt_Snedeker,
-    Dylan_Frittelli,
-    Seth_Reeves,
-    Chez_Reavie,
-    Hudson_Swafford,
-    Adam_Schenk,
-    Kyle_Stanley,
-    Troy_Merritt,
-    Scott_Piercy,
-    Brendon_Todd,
-    Matt_Kuchar,
-    Charles_Howell,
-    Nick_Watney,
-    Matt_Jones,
-    Zach_Johnson,
-    Mark_Hubbard,
-    Chesson_Hadley,
-    Chun_An_Yu,
-    Keith_Mitchell,
-    Matt_Wallace,
-    Sam_Ryder,
-    Peter_Malnati,
-    James_Hahn,
-    Nick_Taylor,
-    Sepp_Straka,
-    Robert_Streb,
-    Matthew_NeSmith,
-    Nate_Lashley,
-    Rory_Sabbatini,
-    Brian_Stuard,
-    Greyson_Sigg,
-    Michael_Thompson,
-    Doc_Redman,
-    Kevin_Tway,
-    Aaron_Rai,
-    Davis_Riley,
-    Adam_Svensson,
-    Hank_Lebioda,
-    Bronson_Burgoon,
-    Wyndham_Clark,
-    Trey_Mullinax,
-    JT_Poston,
-    Brandon_Hagy,
-    Brice_Garnett,
-    Andrew_Landry,
-    Andrew_Putnam,
-  ] = await Promise.all(
-    golferInfo.map((obj) =>
-      Golfer.create({
-        name: obj.name,
-        odds: obj.odds,
-        finalScore: obj.finalScore,
-        missedCut: obj.missedCut,
-      })
-    )
-  );
+  // const [
+  //   Collin_Morikawa,
+  //   Dustin_Johnson,
+  //   Sergio_Garcia,
+  //   Francesco_Molinari,
+  //   Jon_Rahm,
+  //   Brooks_Koepka,
+  //   Sam_Burns,
+  //   Abraham_Ancer,
+  //   Webb_Simpson,
+  //   Scottie_Scheffler,
+  //   Louis_Oosthuizen,
+  //   Jordan_Spieth,
+  //   Xander_Schauffele,
+  //   Hideki_Matsuyama,
+  //   Will_Zalatoris,
+  //   Harris_English,
+  //   Patrick_Reed,
+  //   Paul_Casey,
+  //   Corey_Conners,
+  //   Si_Woo_Kim,
+  //   Adam_Scott,
+  //   Cameron_Tringale,
+  //   Matthew_Wolff,
+  //   Jason_Kokrak,
+  //   Joaquin_Niemann,
+  //   Erik_Van_Rooyen,
+  //   Maverick_McNealy,
+  //   Mito_Pereira,
+  //   Russell_Henley,
+  //   Talor_Gooch,
+  //   Marc_Leishman,
+  //   Justin_Thomas,
+  //   Kevin_Na,
+  //   Lee_Westwood,
+  //   Rory_McIlroy,
+  //   Sungjae_Im,
+  //   Viktor_Hovland,
+  //   Ryan_Palmer,
+  //   Adam_Hadwin,
+  //   Taylor_Moore,
+  //   Ian_Poulter,
+  //   Cameron_Davis,
+  //   Emiliano_Grillo,
+  //   Aaron_Wise,
+  //   Rickie_Fowler,
+  //   Patton_Kizzire,
+  //   Carlos_Ortiz,
+  //   Pat_Perez,
+  //   Doug_Ghim,
+  //   Luke_List,
+  //   Stewart_Cink,
+  //   Sebastian_Munoz,
+  //   Seamus_Power,
+  //   Kyoung_Hoon_Lee,
+  //   Chad_Ramey,
+  //   Kevin_Kisner,
+  //   Lanto_Griffin,
+  //   Denny_McCarthy,
+  //   Danny_Willett,
+  //   Joel_Dahmen,
+  //   Sahith_Theegala,
+  //   Henrik_Norlander,
+  //   Lucas_Glover,
+  //   Charl_Schwartzel,
+  //   Garrick_Higgo,
+  //   Roger_Sloan,
+  //   Russell_Knox,
+  //   Joseph_Bramlett,
+  //   Cameron_Young,
+  //   Rasmus_Hojgaard,
+  //   Ryan_Moore,
+  //   Stephan_Jaeger,
+  //   Scott_Stallings,
+  //   Tom_Hoge,
+  //   Hayden_Buckley,
+  //   Brendan_Steele,
+  //   Martin_Laird,
+  //   Harry_Higgs,
+  //   Brandt_Snedeker,
+  //   Dylan_Frittelli,
+  //   Seth_Reeves,
+  //   Chez_Reavie,
+  //   Hudson_Swafford,
+  //   Adam_Schenk,
+  //   Kyle_Stanley,
+  //   Troy_Merritt,
+  //   Scott_Piercy,
+  //   Brendon_Todd,
+  //   Matt_Kuchar,
+  //   Charles_Howell,
+  //   Nick_Watney,
+  //   Matt_Jones,
+  //   Zach_Johnson,
+  //   Mark_Hubbard,
+  //   Chesson_Hadley,
+  //   Chun_An_Yu,
+  //   Keith_Mitchell,
+  //   Matt_Wallace,
+  //   Sam_Ryder,
+  //   Peter_Malnati,
+  //   James_Hahn,
+  //   Nick_Taylor,
+  //   Sepp_Straka,
+  //   Robert_Streb,
+  //   Matthew_NeSmith,
+  //   Nate_Lashley,
+  //   Rory_Sabbatini,
+  //   Brian_Stuard,
+  //   Greyson_Sigg,
+  //   Michael_Thompson,
+  //   Doc_Redman,
+  //   Kevin_Tway,
+  //   Aaron_Rai,
+  //   Davis_Riley,
+  //   Adam_Svensson,
+  //   Hank_Lebioda,
+  //   Bronson_Burgoon,
+  //   Wyndham_Clark,
+  //   Trey_Mullinax,
+  //   JT_Poston,
+  //   Brandon_Hagy,
+  //   Brice_Garnett,
+  //   Andrew_Landry,
+  //   Andrew_Putnam,
+  // ] = await Promise.all(
+  //   golferInfo.map((obj) =>
+  //     Golfer.create({
+  //       name: obj.name,
+  //       odds: obj.odds,
+  //       finalScore: obj.finalScore,
+  //       missedCut: obj.missedCut,
+  //     })
+  //   )
+  // );
   /////////////////////////////////////////////////////////
-  const Joe = await Participant.create({
-    email: "joe@gmail.com",
-    password: "joe_pw",
-    name: "Joe",
-    isAdmin: true,
-    golfer1: "Collin Morikawa",
-    golfer2: "Dustin Johnson",
-    golfer3: "Xander Schauffele",
-    golfer4: "Jordan Spieth",
-    golfer5: "Justin Thomas",
-    golfer6: "Rory McIlroy",
-    tiebreaker: -10,
-    winningGolfer: "Xander Schauffele",
-  });
-  const Dalton = await Participant.create({
-    email: "dalton@gmail.com",
-    password: "dalton_pw",
-    name: "Dalton",
-    isAdmin: false,
-    golfer1: "Dustin Johnson",
-    golfer2: "Sam Burns",
-    golfer3: "Jordan Spieth",
-    golfer4: "Louis Oosthuizen",
-    golfer5: "Sungjae Im",
-    golfer6: "Cameron Davis",
-    tiebreaker: -5,
-    winningGolfer: "Dustin Johnson",
-  });
-  const Hoov = await Participant.create({
-    email: "hoov@gmail.com",
-    password: "hoov_pw",
-    name: "Hoov",
-    isAdmin: false,
-    golfer1: "Dustin Johnson",
-    golfer2: "Sam Burns",
-    golfer3: "Jordan Spieth",
-    golfer4: "Louis Oosthuizen",
-    golfer5: "Sungjae Im",
-    golfer6: "Cameron Davis",
-    tiebreaker: -5,
-    winningGolfer: "Dustin Johnson",
-  });
-  const E = await Participant.create({
-    email: "ivaylo@gmail.com",
-    password: "ivaylo_pw",
-    name: "Ivaylo",
-    isAdmin: false,
-    golfer1: "Abraham Ancer",
-    golfer2: "Scottie Scheffler",
-    golfer3: "Paul Casey",
-    golfer4: "Will Zalatoris",
-    golfer5: "Taylor Moore",
-    golfer6: "Joel Dahmen",
-    tiebreaker: -15,
-    winningGolfer: "Joel Dahmen",
-  });
-  const Coach = await Participant.create({
-    email: "james@gmail.com",
-    password: "james_pw",
-    name: "James",
-    isAdmin: false,
-    golfer1: "Collin Morikawa",
-    golfer2: "Brooks Koepka",
-    golfer3: "Paul Casey",
-    golfer4: "Jordan Spieth",
-    golfer5: "Kevin Na",
-    golfer6: "Lee Westwood",
-    tiebreaker: -10,
-    winningGolfer: "Paul Casey",
-  });
-  const Bill = await Participant.create({
-    email: "joe1@gmail.com",
-    password: "joe1_pw",
-    name: "Bill",
-    golfer1: "Abraham Ancer",
-    golfer2: "Brooks Koepka",
-    golfer3: "Paul Casey",
-    golfer4: "Corey Conners",
-    golfer5: "Kevin Na",
-    golfer6: "Adam Hadwin",
-    tiebreaker: -5,
-    winningGolfer: "Brooks Koepka",
-  });
-  const Frank = await Participant.create({
-    email: "dalton1@gmail.com",
-    password: "dalton1_pw",
-    name: "Frank",
-    isAdmin: false,
-    golfer1: "Dustin Johnson",
-    golfer2: "Sam Burns",
-    golfer3: "Corey Conners",
-    golfer4: "Louis Oosthuizen",
-    golfer5: "Sungjae Im",
-    golfer6: "Adam Hadwin",
-    tiebreaker: -7,
-    winningGolfer: "Adam Hadwin",
-  });
-  const John = await Participant.create({
-    email: "hoov1@gmail.com",
-    password: "hoov1_pw",
-    name: "John",
-    isAdmin: false,
-    golfer1: "Dustin Johnson",
-    golfer2: "Scottie Scheffler",
-    golfer3: "Jordan Spieth",
-    golfer4: "Louis Oosthuizen",
-    golfer5: "Sungjae Im",
-    golfer6: "Taylor Moore",
-    tiebreaker: -5,
-    winningGolfer: "Dustin Johnson",
-  });
-  const Brandon = await Participant.create({
-    email: "ivaylo1@gmail.com",
-    password: "ivaylo1_pw",
-    name: "Brandon",
-    isAdmin: false,
-    golfer1: "Collin Morikawa",
-    golfer2: "Francesco Molinari",
-    golfer3: "Paul Casey",
-    golfer4: "Will Zalatoris",
-    golfer5: "Kevin Na",
-    golfer6: "Joel Dahmen",
-    tiebreaker: null,
-    winningGolfer: null,
-  });
-  const Jake = await Participant.create({
-    email: "james1@gmail.com",
-    password: "james1_pw",
-    name: "Jake",
-    isAdmin: false,
-    golfer1: "Francesco Molinari",
-    golfer2: "Brooks Koepka",
-    golfer3: "Paul Casey",
-    golfer4: "Will Zalatoris",
-    golfer5: "Kevin Na",
-    golfer6: "Lee Westwood",
-    tiebreaker: -10,
-    winningGolfer: "Paul Casey",
-  });
+  // const Joe = await Participant.create({
+  //   email: "joe@gmail.com",
+  //   password: "joe_pw",
+  //   name: "Joe",
+  //   isAdmin: true,
+  //   golfer1: "Collin Morikawa",
+  //   golfer2: "Dustin Johnson",
+  //   golfer3: "Xander Schauffele",
+  //   golfer4: "Jordan Spieth",
+  //   golfer5: "Justin Thomas",
+  //   golfer6: "Rory McIlroy",
+  //   tiebreaker: -10,
+  //   winningGolfer: "Xander Schauffele",
+  // });
+  // const Dalton = await Participant.create({
+  //   email: "dalton@gmail.com",
+  //   password: "dalton_pw",
+  //   name: "Dalton",
+  //   isAdmin: false,
+  //   golfer1: "Dustin Johnson",
+  //   golfer2: "Sam Burns",
+  //   golfer3: "Jordan Spieth",
+  //   golfer4: "Louis Oosthuizen",
+  //   golfer5: "Sungjae Im",
+  //   golfer6: "Cameron Davis",
+  //   tiebreaker: -5,
+  //   winningGolfer: "Dustin Johnson",
+  // });
+  // const Hoov = await Participant.create({
+  //   email: "hoov@gmail.com",
+  //   password: "hoov_pw",
+  //   name: "Hoov",
+  //   isAdmin: false,
+  //   golfer1: "Dustin Johnson",
+  //   golfer2: "Sam Burns",
+  //   golfer3: "Jordan Spieth",
+  //   golfer4: "Louis Oosthuizen",
+  //   golfer5: "Sungjae Im",
+  //   golfer6: "Cameron Davis",
+  //   tiebreaker: -5,
+  //   winningGolfer: "Dustin Johnson",
+  // });
+  // const E = await Participant.create({
+  //   email: "ivaylo@gmail.com",
+  //   password: "ivaylo_pw",
+  //   name: "Ivaylo",
+  //   isAdmin: false,
+  //   golfer1: "Abraham Ancer",
+  //   golfer2: "Scottie Scheffler",
+  //   golfer3: "Paul Casey",
+  //   golfer4: "Will Zalatoris",
+  //   golfer5: "Taylor Moore",
+  //   golfer6: "Joel Dahmen",
+  //   tiebreaker: -15,
+  //   winningGolfer: "Joel Dahmen",
+  // });
+  // const Coach = await Participant.create({
+  //   email: "james@gmail.com",
+  //   password: "james_pw",
+  //   name: "James",
+  //   isAdmin: false,
+  //   golfer1: "Collin Morikawa",
+  //   golfer2: "Brooks Koepka",
+  //   golfer3: "Paul Casey",
+  //   golfer4: "Jordan Spieth",
+  //   golfer5: "Kevin Na",
+  //   golfer6: "Lee Westwood",
+  //   tiebreaker: -10,
+  //   winningGolfer: "Paul Casey",
+  // });
+  // const Bill = await Participant.create({
+  //   email: "joe1@gmail.com",
+  //   password: "joe1_pw",
+  //   name: "Bill",
+  //   golfer1: "Abraham Ancer",
+  //   golfer2: "Brooks Koepka",
+  //   golfer3: "Paul Casey",
+  //   golfer4: "Corey Conners",
+  //   golfer5: "Kevin Na",
+  //   golfer6: "Adam Hadwin",
+  //   tiebreaker: -5,
+  //   winningGolfer: "Brooks Koepka",
+  // });
+  // const Frank = await Participant.create({
+  //   email: "dalton1@gmail.com",
+  //   password: "dalton1_pw",
+  //   name: "Frank",
+  //   isAdmin: false,
+  //   golfer1: "Dustin Johnson",
+  //   golfer2: "Sam Burns",
+  //   golfer3: "Corey Conners",
+  //   golfer4: "Louis Oosthuizen",
+  //   golfer5: "Sungjae Im",
+  //   golfer6: "Adam Hadwin",
+  //   tiebreaker: -7,
+  //   winningGolfer: "Adam Hadwin",
+  // });
+  // const John = await Participant.create({
+  //   email: "hoov1@gmail.com",
+  //   password: "hoov1_pw",
+  //   name: "John",
+  //   isAdmin: false,
+  //   golfer1: "Dustin Johnson",
+  //   golfer2: "Scottie Scheffler",
+  //   golfer3: "Jordan Spieth",
+  //   golfer4: "Louis Oosthuizen",
+  //   golfer5: "Sungjae Im",
+  //   golfer6: "Taylor Moore",
+  //   tiebreaker: -5,
+  //   winningGolfer: "Dustin Johnson",
+  // });
+  // const Brandon = await Participant.create({
+  //   email: "ivaylo1@gmail.com",
+  //   password: "ivaylo1_pw",
+  //   name: "Brandon",
+  //   isAdmin: false,
+  //   golfer1: "Collin Morikawa",
+  //   golfer2: "Francesco Molinari",
+  //   golfer3: "Paul Casey",
+  //   golfer4: "Will Zalatoris",
+  //   golfer5: "Kevin Na",
+  //   golfer6: "Joel Dahmen",
+  //   tiebreaker: null,
+  //   winningGolfer: null,
+  // });
+  // const Jake = await Participant.create({
+  //   email: "james1@gmail.com",
+  //   password: "james1_pw",
+  //   name: "Jake",
+  //   isAdmin: false,
+  //   golfer1: "Francesco Molinari",
+  //   golfer2: "Brooks Koepka",
+  //   golfer3: "Paul Casey",
+  //   golfer4: "Will Zalatoris",
+  //   golfer5: "Kevin Na",
+  //   golfer6: "Lee Westwood",
+  //   tiebreaker: -10,
+  //   winningGolfer: "Paul Casey",
+  // });
   /////////////////////////////////////////////////////////////
   //once tourney commences:
   ///////////////////////////////////////////////////////////////////
-  // const Collin_Morikawa = await Golfer.findOne({
-  //   where: { name: "Collin Morikawa" },
-  // });
+  const Collin_Morikawa = await Golfer.findOne({
+    where: { name: "Collin Morikawa" },
+  });
 
-  // const Dustin_Johnson = await Golfer.findOne({
-  //   where: { name: "Dustin Johnson" },
-  // });
+  const Dustin_Johnson = await Golfer.findOne({
+    where: { name: "Dustin Johnson" },
+  });
 
-  // const Xander_Schauffele = await Golfer.findOne({
-  //   where: { name: "Xander Schauffele" },
-  // });
+  const Xander_Schauffele = await Golfer.findOne({
+    where: { name: "Xander Schauffele" },
+  });
 
-  // const Jordan_Spieth = await Golfer.findOne({
-  //   where: { name: "Jordan Spieth" },
-  // });
+  const Jordan_Spieth = await Golfer.findOne({
+    where: { name: "Jordan Spieth" },
+  });
 
-  // const Justin_Thomas = await Golfer.findOne({
-  //   where: { name: "Justin Thomas" },
-  // });
+  const Justin_Thomas = await Golfer.findOne({
+    where: { name: "Justin Thomas" },
+  });
 
-  // const Rory_McIlroy = await Golfer.findOne({
-  //   where: { name: "Rory McIlroy" },
-  // });
+  const Rory_McIlroy = await Golfer.findOne({
+    where: { name: "Rory McIlroy" },
+  });
 
-  // const Sam_Burns = await Golfer.findOne({
-  //   where: { name: "Sam Burns" },
-  // });
+  const Sam_Burns = await Golfer.findOne({
+    where: { name: "Sam Burns" },
+  });
 
-  // const Louis_Oosthuizen = await Golfer.findOne({
-  //   where: { name: "Louis Oosthuizen" },
-  // });
+  const Louis_Oosthuizen = await Golfer.findOne({
+    where: { name: "Louis Oosthuizen" },
+  });
 
-  // const Sungjae_Im = await Golfer.findOne({
-  //   where: { name: "Sungjae Im" },
-  // });
+  const Sungjae_Im = await Golfer.findOne({
+    where: { name: "Sungjae Im" },
+  });
 
-  // const Cameron_Davis = await Golfer.findOne({
-  //   where: { name: "Cameron Davis" },
-  // });
+  const Cameron_Davis = await Golfer.findOne({
+    where: { name: "Cameron Davis" },
+  });
 
-  // const Abraham_Ancer = await Golfer.findOne({
-  //   where: { name: "Abraham Ancer" },
-  // });
+  const Abraham_Ancer = await Golfer.findOne({
+    where: { name: "Abraham Ancer" },
+  });
 
-  // const Scottie_Scheffler = await Golfer.findOne({
-  //   where: { name: "Scottie Scheffler" },
-  // });
+  const Scottie_Scheffler = await Golfer.findOne({
+    where: { name: "Scottie Scheffler" },
+  });
 
-  // const Paul_Casey = await Golfer.findOne({
-  //   where: { name: "Paul Casey" },
-  // });
+  const Paul_Casey = await Golfer.findOne({
+    where: { name: "Paul Casey" },
+  });
 
-  // const Will_Zalatoris = await Golfer.findOne({
-  //   where: { name: "Will Zalatoris" },
-  // });
+  const Will_Zalatoris = await Golfer.findOne({
+    where: { name: "Will Zalatoris" },
+  });
 
-  // const Taylor_Moore = await Golfer.findOne({
-  //   where: { name: "Taylor Moore" },
-  // });
+  const Taylor_Moore = await Golfer.findOne({
+    where: { name: "Taylor Moore" },
+  });
 
-  // const Joel_Dahmen = await Golfer.findOne({
-  //   where: { name: "Joel Dahmen" },
-  // });
+  const Joel_Dahmen = await Golfer.findOne({
+    where: { name: "Joel Dahmen" },
+  });
 
-  // const Brooks_Koepka = await Golfer.findOne({
-  //   where: { name: "Brooks Koepka" },
-  // });
+  const Brooks_Koepka = await Golfer.findOne({
+    where: { name: "Brooks Koepka" },
+  });
 
-  // const Kevin_Na = await Golfer.findOne({
-  //   where: { name: "Kevin Na" },
-  // });
+  const Kevin_Na = await Golfer.findOne({
+    where: { name: "Kevin Na" },
+  });
 
-  // const Lee_Westwood = await Golfer.findOne({
-  //   where: { name: "Lee Westwood" },
-  // });
+  const Lee_Westwood = await Golfer.findOne({
+    where: { name: "Lee Westwood" },
+  });
 
-  // const Corey_Conners = await Golfer.findOne({
-  //   where: { name: "Corey Conners" },
-  // });
+  const Corey_Conners = await Golfer.findOne({
+    where: { name: "Corey Conners" },
+  });
 
-  // const Adam_Hadwin = await Golfer.findOne({
-  //   where: { name: "Adam Hadwin" },
-  // });
+  const Adam_Hadwin = await Golfer.findOne({
+    where: { name: "Adam Hadwin" },
+  });
 
-  // const Francesco_Molinari = await Golfer.findOne({
-  //   where: { name: "Francesco Molinari" },
-  // });
+  const Francesco_Molinari = await Golfer.findOne({
+    where: { name: "Francesco Molinari" },
+  });
 
-  // Collin_Morikawa.finalScore = -1;
-  // Dustin_Johnson.finalScore = -2;
-  // Xander_Schauffele.finalScore = 3;
-  // Jordan_Spieth.finalScore = 8;
-  // Justin_Thomas.finalScore = -12;
-  // Rory_McIlroy.finalScore = -6;
-  // Sam_Burns.finalScore = -6;
-  // Louis_Oosthuizen.finalScore = -7;
-  // Sungjae_Im.finalScore = -8;
-  // Cameron_Davis.finalScore = -1;
-  // Abraham_Ancer.finalScore = 0;
-  // Scottie_Scheffler.finalScore = 9;
-  // Paul_Casey.finalScore = 5;
-  // Will_Zalatoris.finalScore = 3;
-  // Taylor_Moore.finalScore = 1;
-  // Joel_Dahmen.finalScore = 4;
-  // Brooks_Koepka.finalScore = -3;
-  // Kevin_Na.finalScore = -6;
-  // Lee_Westwood.finalScore = -8;
-  // Corey_Conners.finalScore = -10;
-  // Adam_Hadwin.finalScore = -2;
-  // Francesco_Molinari.finalScore = 2;
+  Collin_Morikawa.finalScore = -1;
+  Dustin_Johnson.finalScore = -2;
+  Xander_Schauffele.finalScore = 3;
+  Jordan_Spieth.finalScore = 8;
+  Justin_Thomas.finalScore = -12;
+  Rory_McIlroy.finalScore = -6;
+  Sam_Burns.finalScore = -6;
+  Louis_Oosthuizen.finalScore = -7;
+  Sungjae_Im.finalScore = -8;
+  Cameron_Davis.finalScore = -1;
+  Abraham_Ancer.finalScore = 0;
+  Scottie_Scheffler.finalScore = 9;
+  Paul_Casey.finalScore = 5;
+  Will_Zalatoris.finalScore = 3;
+  Taylor_Moore.finalScore = 1;
+  Joel_Dahmen.finalScore = 4;
+  Brooks_Koepka.finalScore = -3;
+  Kevin_Na.finalScore = -6;
+  Lee_Westwood.finalScore = -8;
+  Corey_Conners.finalScore = -10;
+  Adam_Hadwin.finalScore = -2;
+  Francesco_Molinari.finalScore = 2;
 
   // ///////////////////////////////////////////////////////////////
   //post cut
-  // Collin_Morikawa.missedCutNumber = 3;
-  // Dustin_Johnson.missedCutNumber = 3;
-  // Xander_Schauffele.missedCutNumber = 3;
-  // Jordan_Spieth.missedCutNumber = 3;
-  // Justin_Thomas.missedCutNumber = 3;
-  // Rory_McIlroy.missedCutNumber = 3;
-  // Sam_Burns.missedCutNumber = 3;
-  // Louis_Oosthuizen.missedCutNumber = 3;
-  // Sungjae_Im.missedCutNumber = 3;
-  // Cameron_Davis.missedCutNumber = 3;
-  // Abraham_Ancer.missedCutNumber = 3;
-  // Scottie_Scheffler.missedCutNumber = 3;
-  // Paul_Casey.missedCutNumber = 3;
-  // Will_Zalatoris.missedCutNumber = 3;
-  // Taylor_Moore.missedCutNumber = 3;
-  // Joel_Dahmen.missedCutNumber = 3;
-  // Brooks_Koepka.missedCutNumber = 3;
-  // Kevin_Na.missedCutNumber = 3;
-  // Lee_Westwood.missedCutNumber = 3;
-  // Corey_Conners.missedCutNumber = 3;
-  // Adam_Hadwin.missedCutNumber = 3;
-  // Francesco_Molinari.missedCutNumber = 3;
-  // //missed cut golfer assignment
-  // Justin_Thomas.missedCut = true;
-  // Sungjae_Im.missedCut = true;
-  // Taylor_Moore.missedCut = true;
-  // Kevin_Na.missedCut = true;
-  // Lee_Westwood.QG = true;
+  Collin_Morikawa.missedCutNumber = 3;
+  Dustin_Johnson.missedCutNumber = 3;
+  Xander_Schauffele.missedCutNumber = 3;
+  Jordan_Spieth.missedCutNumber = 3;
+  Justin_Thomas.missedCutNumber = 3;
+  Rory_McIlroy.missedCutNumber = 3;
+  Sam_Burns.missedCutNumber = 3;
+  Louis_Oosthuizen.missedCutNumber = 3;
+  Sungjae_Im.missedCutNumber = 3;
+  Cameron_Davis.missedCutNumber = 3;
+  Abraham_Ancer.missedCutNumber = 3;
+  Scottie_Scheffler.missedCutNumber = 3;
+  Paul_Casey.missedCutNumber = 3;
+  Will_Zalatoris.missedCutNumber = 3;
+  Taylor_Moore.missedCutNumber = 3;
+  Joel_Dahmen.missedCutNumber = 3;
+  Brooks_Koepka.missedCutNumber = 3;
+  Kevin_Na.missedCutNumber = 3;
+  Lee_Westwood.missedCutNumber = 3;
+  Corey_Conners.missedCutNumber = 3;
+  Adam_Hadwin.missedCutNumber = 3;
+  Francesco_Molinari.missedCutNumber = 3;
+  //missed cut golfer assignment
+  Justin_Thomas.missedCut = true;
+  Sungjae_Im.missedCut = true;
+  Taylor_Moore.missedCut = true;
+  Kevin_Na.missedCut = true;
+  Lee_Westwood.QG = true;
   // ///////////////////////////////////////////////////////////////
-  // await Promise.all([
-  //   Collin_Morikawa.save(),
-  //   Dustin_Johnson.save(),
-  //   Xander_Schauffele.save(),
-  //   Jordan_Spieth.save(),
-  //   Justin_Thomas.save(),
-  //   Rory_McIlroy.save(),
-  //   Sam_Burns.save(),
-  //   Louis_Oosthuizen.save(),
-  //   Sungjae_Im.save(),
-  //   Cameron_Davis.save(),
-  //   Abraham_Ancer.save(),
-  //   Scottie_Scheffler.save(),
-  //   Paul_Casey.save(),
-  //   Will_Zalatoris.save(),
-  //   Taylor_Moore.save(),
-  //   Joel_Dahmen.save(),
-  //   Brooks_Koepka.save(),
-  //   Kevin_Na.save(),
-  //   Lee_Westwood.save(),
-  //   Corey_Conners.save(),
-  //   Adam_Hadwin.save(),
-  //   Francesco_Molinari.save(),
-  // ]);
+  await Promise.all([
+    Collin_Morikawa.save(),
+    Dustin_Johnson.save(),
+    Xander_Schauffele.save(),
+    Jordan_Spieth.save(),
+    Justin_Thomas.save(),
+    Rory_McIlroy.save(),
+    Sam_Burns.save(),
+    Louis_Oosthuizen.save(),
+    Sungjae_Im.save(),
+    Cameron_Davis.save(),
+    Abraham_Ancer.save(),
+    Scottie_Scheffler.save(),
+    Paul_Casey.save(),
+    Will_Zalatoris.save(),
+    Taylor_Moore.save(),
+    Joel_Dahmen.save(),
+    Brooks_Koepka.save(),
+    Kevin_Na.save(),
+    Lee_Westwood.save(),
+    Corey_Conners.save(),
+    Adam_Hadwin.save(),
+    Francesco_Molinari.save(),
+  ]);
 };
 
 module.exports = {
   models: { Participant, Golfer },
   syncAndSeed,
 };
-
-// const partPicks = [
-//   {
-//     email: "joe@gmail.com",
-//     password: "joe_pw",
-//     name: "Joe",
-//     isAdmin: true,
-//     golfer1: null,
-//     golfer2: null,
-//     golfer3: null,
-//     golfer4: null,
-//     golfer5: null,
-//     golfer6: null,
-//     tiebreaker: null,
-//     winningGolfer: null,
-//   },
-//   {
-//     email: "dalton@gmail.com",
-//     password: "dalton_pw",
-//     name: "Dalton",
-//     golfer1: null,
-//     golfer2: null,
-//     golfer3: null,
-//     golfer4: null,
-//     golfer5: null,
-//     golfer6: null,
-//     tiebreaker: null,
-//     winningGolfer: null,
-//   },
-//   {
-//     email: "polizi@gmail.com",
-//     password: "polizi_pw",
-//     name: "Polizi",
-//     golfer1: null,
-//     golfer2: null,
-//     golfer3: null,
-//     golfer4: null,
-//     golfer5: null,
-//     golfer6: null,
-//     tiebreaker: null,
-//     winningGolfer: null,
-//   },
-//   {
-//     email: "coach@gmail.com",
-//     password: "coach_pw",
-//     name: "Coach",
-//     golfer1: null,
-//     golfer2: null,
-//     golfer3: null,
-//     golfer4: null,
-//     golfer5: null,
-//     golfer6: null,
-//     tiebreaker: null,
-//     winningGolfer: null,
-//   },
-//   {
-//     email: "hoov@gmail.com",
-//     password: "hoov_pw",
-//     name: "Hoov",
-//     golfer1: null,
-//     golfer2: null,
-//     golfer3: null,
-//     golfer4: null,
-//     golfer5: null,
-//     golfer6: null,
-//     tiebreaker: null,
-//     winningGolfer: null,
-//   },
-//   {
-//     email: "apollo@gmail.com",
-//     password: "apollo_pw",
-//     name: "Apollo",
-//     golfer1: null,
-//     golfer2: null,
-//     golfer3: null,
-//     golfer4: null,
-//     golfer5: null,
-//     golfer6: null,
-//     tiebreaker: null,
-//     winningGolfer: null,
-//   },
-// ];
-
-// const syncAndSeed = async () => {
-//   // await db.sync({ force: true });
-//   /////////////////////////////////////////////////////////////
-//   // const [
-//   //   Collin_Morikawa,
-//   //   Dustin_Johnson,
-//   //   Sergio_Garcia,
-//   //   Francesco_Molinari,
-//   //   Jon_Rahm,
-//   //   Brooks_Koepka,
-//   //   Sam_Burns,
-//   //   Abraham_Ancer,
-//   //   Webb_Simpson,
-//   //   Scottie_Scheffler,
-//   //   Louis_Oosthuizen,
-//   //   Jordan_Spieth,
-//   //   Xander_Schauffele,
-//   //   Hideki_Matsuyama,
-//   //   Will_Zalatoris,
-//   //   Harris_English,
-//   //   Patrick_Reed,
-//   //   Paul_Casey,
-//   //   Corey_Conners,
-//   //   Si_Woo_Kim,
-//   //   Adam_Scott,
-//   //   Cameron_Tringale,
-//   //   Matthew_Wolff,
-//   //   Jason_Kokrak,
-//   //   Joaquin_Niemann,
-//   //   Erik_Van_Rooyen,
-//   //   Maverick_McNealy,
-//   //   Mito_Pereira,
-//   //   Russell_Henley,
-//   //   Talor_Gooch,
-//   //   Marc_Leishman,
-//   //   Justin_Thomas,
-//   //   Kevin_Na,
-//   //   Lee_Westwood,
-//   //   Rory_McIlroy,
-//   //   Sungjae_Im,
-//   //   Viktor_Hovland,
-//   //   Ryan_Palmer,
-//   //   Adam_Hadwin,
-//   //   Taylor_Moore,
-//   //   Ian_Poulter,
-//   //   Cameron_Davis,
-//   //   Emiliano_Grillo,
-//   //   Aaron_Wise,
-//   //   Rickie_Fowler,
-//   //   Patton_Kizzire,
-//   //   Carlos_Ortiz,
-//   //   Pat_Perez,
-//   //   Doug_Ghim,
-//   //   Luke_List,
-//   //   Stewart_Cink,
-//   //   Sebastian_Munoz,
-//   //   Seamus_Power,
-//   //   Kyoung_Hoon_Lee,
-//   //   Chad_Ramey,
-//   //   Kevin_Kisner,
-//   //   Lanto_Griffin,
-//   //   Denny_McCarthy,
-//   //   Danny_Willett,
-//   //   Joel_Dahmen,
-//   //   Sahith_Theegala,
-//   //   Henrik_Norlander,
-//   //   Lucas_Glover,
-//   //   Charl_Schwartzel,
-//   //   Garrick_Higgo,
-//   //   Roger_Sloan,
-//   //   Russell_Knox,
-//   //   Joseph_Bramlett,
-//   //   Cameron_Young,
-//   //   Rasmus_Hojgaard,
-//   //   Ryan_Moore,
-//   //   Stephan_Jaeger,
-//   //   Scott_Stallings,
-//   //   Tom_Hoge,
-//   //   Hayden_Buckley,
-//   //   Brendan_Steele,
-//   //   Martin_Laird,
-//   //   Harry_Higgs,
-//   //   Brandt_Snedeker,
-//   //   Dylan_Frittelli,
-//   //   Seth_Reeves,
-//   //   Chez_Reavie,
-//   //   Hudson_Swafford,
-//   //   Adam_Schenk,
-//   //   Kyle_Stanley,
-//   //   Troy_Merritt,
-//   //   Scott_Piercy,
-//   //   Brendon_Todd,
-//   //   Matt_Kuchar,
-//   //   Charles_Howell,
-//   //   Nick_Watney,
-//   //   Matt_Jones,
-//   //   Zach_Johnson,
-//   //   Mark_Hubbard,
-//   //   Chesson_Hadley,
-//   //   Chun_An_Yu,
-//   //   Keith_Mitchell,
-//   //   Matt_Wallace,
-//   //   Sam_Ryder,
-//   //   Peter_Malnati,
-//   //   James_Hahn,
-//   //   Nick_Taylor,
-//   //   Sepp_Straka,
-//   //   Robert_Streb,
-//   //   Matthew_NeSmith,
-//   //   Nate_Lashley,
-//   //   Rory_Sabbatini,
-//   //   Brian_Stuard,
-//   //   Greyson_Sigg,
-//   //   Michael_Thompson,
-//   //   Doc_Redman,
-//   //   Kevin_Tway,
-//   //   Aaron_Rai,
-//   //   Davis_Riley,
-//   //   Adam_Svensson,
-//   //   Hank_Lebioda,
-//   //   Bronson_Burgoon,
-//   //   Wyndham_Clark,
-//   //   Trey_Mullinax,
-//   //   JT_Poston,
-//   //   Brandon_Hagy,
-//   //   Brice_Garnett,
-//   //   Andrew_Landry,
-//   //   Andrew_Putnam,
-//   // ] = await Promise.all(
-//   //   golferInfo.map((obj) =>
-//   //     Golfer.create({
-//   //       name: obj.name,
-//   //       odds: obj.odds,
-//   //       finalScore: obj.finalScore,
-//   //       missedCut: obj.missedCut,
-//   //     })
-//   //   )
-//   // );
-//   /////////////////////////////////////////////////////////////
-//   // const [Joe, Dalton, Polizi, Coach, Hoov, Apollo] = await Promise.all(
-//   //   partPicks.map((part) =>
-//   //     Participant.create({
-//   //       email: part.email,
-//   //       password: part.password,
-//   //       name: part.name,
-//   //       isAdmin: part.isAdmin,
-//   //       golfer1: part.golfer1,
-//   //       golfer2: part.golfer2,
-//   //       golfer3: part.golfer3,
-//   //       golfer4: part.golfer4,
-//   //       golfer5: part.golfer5,
-//   //       golfer6: part.golfer6,
-//   //       tiebreaker: part.tiebreaker,
-//   //       winningGolfer: part.winningGolfer,
-//   //     })
-//   //   )
-//   // );
-//   /////////////////////////////////////////////////////////////
-//   // const Joe = await Participant.create({
-//   //   email: "joe@gmail.com",
-//   //   password: "joe_pw",
-//   //   name: "Joe",
-//   //   isAdmin: true,
-//   //   golfer1: null,
-//   //   golfer2: null,
-//   //   golfer3: null,
-//   //   golfer4: null,
-//   //   golfer5: null,
-//   //   golfer6: null,
-//   //   tiebreaker: null,
-//   //   winningGolfer: null,
-//   // });
-
-//   ///////////////////////////////////////////////////////////////
-//   // (Joe.golfer1 = Dustin_Johnson.name),
-//   //   (Joe.golfer2 = Collin_Morikawa.name),
-//   //   (Joe.golfer3 = Xander_Schauffele.name),
-//   //   (Joe.golfer4 = Jordan_Spieth.name),
-//   //   (Joe.golfer5 = Justin_Thomas.name),
-//   //   (Joe.golfer6 = Rory_McIlroy.name),
-//   //   (Joe.winningGolfer = Xander_Schauffele.name),
-//   // (Dalton.golfer1 = Dustin_Johnson.name),
-//   //   (Dalton.golfer2 = Sam_Burns.name),
-//   //   (Dalton.golfer3 = Jordan_Spieth.name),
-//   //   (Dalton.golfer4 = Louis_Oosthuizen.name),
-//   //   (Dalton.golfer5 = Sungjae_Im.name),
-//   //   (Dalton.golfer6 = Cameron_Davis.name),
-//   //   (Dalton.winningGolfer = Jordan_Spieth.name),
-//   //   (Polizi.golfer1 = Dustin_Johnson.name),
-//   //   (Polizi.golfer2 = Brooks_Koepka.name),
-//   //   (Polizi.golfer3 = Louis_Oosthuizen.name),
-//   //   (Polizi.golfer4 = Si_Woo_Kim.name),
-//   //   (Polizi.golfer5 = Sungjae_Im.name),
-//   //   (Polizi.golfer6 = Viktor_Hovland.name),
-//   //   (Polizi.winningGolfer = Sungjae_Im.name),
-//   //   (Coach.golfer1 = Francesco_Molinari.name),
-//   //   (Coach.golfer2 = Brooks_Koepka.name),
-//   //   (Coach.golfer3 = Paul_Casey.name),
-//   //   (Coach.golfer4 = Jordan_Spieth.name),
-//   //   (Coach.golfer5 = Kevin_Na.name),
-//   //   (Coach.golfer6 = Lee_Westwood.name),
-//   //   (Coach.winningGolfer = Brooks_Koepka.name),
-//   //   (Hoov.golfer1 = Sergio_Garcia.name),
-//   //   (Hoov.golfer2 = Jon_Rahm.name),
-//   //   (Hoov.golfer3 = Talor_Gooch.name),
-//   //   (Hoov.golfer4 = Jordan_Spieth.name),
-//   //   (Hoov.golfer5 = Justin_Thomas.name),
-//   //   (Hoov.golfer6 = Kevin_Na.name),
-//   //   (Hoov.winningGolfer = Sergio_Garcia.name),
-//   //   (Apollo.golfer1 = Francesco_Molinari.name),
-//   //   (Apollo.golfer2 = Collin_Morikawa.name),
-//   //   (Apollo.golfer3 = Louis_Oosthuizen.name),
-//   //   (Apollo.golfer4 = Jordan_Spieth.name),
-//   //   (Apollo.golfer5 = Lee_Westwood.name),
-//   //   (Apollo.golfer6 = Kevin_Na.name),
-//   //   (Apollo.winningGolfer = Francesco_Molinari.name),
-//   // (Joe.tiebreaker = -10);
-//   //   (Dalton.tiebreaker = -14);
-//   // Polizi.tiebreaker = 7;
-//   // Coach.tiebreaker = -7;
-//   // Hoov.tiebreaker = -14;
-//   // Apollo.tiebreaker = -8;
-//   // Joe.paid = true;
-//   // Dalton.paid = true;
-
-//   // await Promise.all([
-//   //   Joe.save(),
-//   //   Dalton.save(),
-//   //   Polizi.save(),
-//   //   Coach.save(),
-//   //   Hoov.save(),
-//   //   Apollo.save(),
-//   // ]);
-//   /////////////////////////////////////////////////////////////
-//   //once tourney commences:
-//   // const Parts = await Participant.findAll();
-//   // Parts.map(async (part) => {
-//   //   part.tourneyStage = "cut";
-//   //   await part.save();
-//   //   await Participant.update({ part });
-//   // });
-//   ///////////////////////////////////////////////////////////////////
-//   ///////////scores
-//   // const Joe = await Participant.findOne({
-//   //   where: {
-//   //     email: "joe@gmail.com",
-//   //   },
-//   // });
-//   // const Dalton = await Participant.findOne({
-//   //   where: {
-//   //     email: "dalton@gmail.com",
-//   //   },
-//   // });
-//   // const E = await Participant.findOne({
-//   //   where: {
-//   //     email: "e@gmail.com",
-//   //   },
-//   // });
-
-//   // Joe.tourneyStage = "commenced";
-//   // Joe.save();
-//   // const Brooks_Koepka = await Golfer.findOne({
-//   //   where: {
-//   //     name: "Brooks Koepka",
-//   //   },
-//   // });
-//   // const Collin_Morikawa = await Golfer.findOne({
-//   //   where: { name: "Collin Morikawa" },
-//   // });
-//   // const Dustin_Johnson = await Golfer.findOne({
-//   //   where: { name: "Dustin Johnson" },
-//   // });
-//   // const Jordan_Spieth = await Golfer.findOne({
-//   //   where: { name: "Jordan Spieth" },
-//   // });
-//   // const Justin_Thomas = await Golfer.findOne({
-//   //   where: { name: "Justin Thomas" },
-//   // });
-//   // const Louis_Oosthuizen = await Golfer.findOne({
-//   //   where: { name: "Louis Oosthuizen" },
-//   // });
-//   // const Rory_McIlroy = await Golfer.findOne({
-//   //   where: { name: "Rory McIlroy" },
-//   // });
-//   // const Sam_Burns = await Golfer.findOne({ where: { name: "Sam Burns" } });
-//   // const Sungjae_Im = await Golfer.findOne({ where: { name: "Sungjae Im" } });
-//   // const Viktor_Hovland = await Golfer.findOne({
-//   //   where: { name: "Viktor Hovland" },
-//   // });
-//   // const Xander_Schauffele = await Golfer.findOne({
-//   //   where: { name: "Xander Schauffele" },
-//   // });
-//   // const Francesco_Molinari = await Golfer.findOne({
-//   //   where: { name: "Francesco Molinari" },
-//   // });
-//   // const Jon_Rahm = await Golfer.findOne({ where: { name: "Jon Rahm" } });
-//   // const Kevin_Na = await Golfer.findOne({ where: { name: "Kevin Na" } });
-//   // const Lee_Westwood = await Golfer.findOne({
-//   //   where: { name: "Lee Westwood" },
-//   // });
-//   // const Sergio_Garcia = await Golfer.findOne({
-//   //   where: { name: "Sergio Garcia" },
-//   // });
-//   // const Cameron_Davis = await Golfer.findOne({
-//   //   where: { name: "Cameron Davis" },
-//   // });
-//   // const Si_Woo_Kim = await Golfer.findOne({ where: { name: "Si-Woo Kim" } });
-//   // const Paul_Casey = await Golfer.findOne({ where: { name: "Paul Casey" } });
-//   // const Talor_Gooch = await Golfer.findOne({ where: { name: "Talor Gooch" } });
-//   // Brooks_Koepka.finalScore = -9;
-//   // Collin_Morikawa.finalScore = -5;
-//   // Dustin_Johnson.finalScore = 9;
-//   // Jordan_Spieth.finalScore = -4;
-//   // Justin_Thomas.finalScore = 4;
-//   // Louis_Oosthuizen.finalScore = -3;
-//   // Rory_McIlroy.finalScore = -7;
-//   // Sam_Burns.finalScore = -1;
-//   // Sungjae_Im.finalScore = 10;
-//   // Viktor_Hovland.finalScore = 0;
-//   // Xander_Schauffele.finalScore = 2;
-//   // Francesco_Molinari.finalScore = -5;
-//   // Jon_Rahm.finalScore = 7;
-//   // Kevin_Na.finalScore = 6;
-//   // Lee_Westwood.finalScore = -1;
-//   // Sergio_Garcia.finalScore = 0;
-//   // Cameron_Davis.finalScore = -2;
-//   // Si_Woo_Kim.finalScore = 7;
-//   // Paul_Casey.finalScore = 0;
-//   // Talor_Gooch.finalScore = -5;
-//   // Collin_Morikawa.DQ = true;
-//   // ///////////////////////////////////////////////////////////////
-//   //post cut
-//   // const Golfers = await Golfer.findAll();
-//   // await Promise.all(
-//   //   Golfers.map((golfer) => {
-//   //     golfer.missedCutNumber = 3;
-//   //     Golfer.update({
-//   //       golfer,
-//   //     });
-//   //     golfer.save();
-//   //   })
-//   // );
-//   //missed cut golfer assignment
-//   // Justin_Thomas.missedCut = true;
-//   // Sungjae_Im.missedCut = true;
-//   // Jon_Rahm.missedCut = true;
-//   // Si_Woo_Kim.missedCut = true;
-//   // ///////////////////////////////////////////////////////////////
-//   // await Promise.all([
-//   //   Brooks_Koepka.save(),
-//   //   Collin_Morikawa.save(),
-//   //   Dustin_Johnson.save(),
-//   //   Jordan_Spieth.save(),
-//   //   Justin_Thomas.save(),
-//   //   Louis_Oosthuizen.save(),
-//   //   Rory_McIlroy.save(),
-//   //   Sam_Burns.save(),
-//   //   Sungjae_Im.save(),
-//   //   Viktor_Hovland.save(),
-//   //   Xander_Schauffele.save(),
-//   //   Francesco_Molinari.save(),
-//   //   Jon_Rahm.save(),
-//   //   Kevin_Na.save(),
-//   //   Lee_Westwood.save(),
-//   //   Sergio_Garcia.save(),
-//   //   Cameron_Davis.save(),
-//   //   Si_Woo_Kim.save(),
-//   //   Paul_Casey.save(),
-//   //   Talor_Gooch.save(),
-//   // ]);
-// };
